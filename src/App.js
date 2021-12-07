@@ -1,6 +1,5 @@
 import Header from "./components/Header/Header";
 import Intro from "./components/Intro/Intro";
-import Features from "./components/Features/Features";
 import NewsMasonry from "./components/NewsMasonry/NewsMasonry";
 import Testimonial from "./components/Testimonial/Testimonial";
 import StatCounter from "./components/StatCounter/StatCounter";
@@ -14,7 +13,6 @@ function App() {
 
       <main role="main">
         <div id="main">
-          <Features />
           <NewsMasonry />
           <Testimonial />
           <StatCounter />
