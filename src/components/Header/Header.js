@@ -1,3 +1,5 @@
+import './Header.css'
+
 function Header() {
   return (
     <header role="banner" className="transparent light">

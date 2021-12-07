@@ -1,3 +1,5 @@
+import './Intro.css';
+
 function Intro() {
   return (
     <div id="intro-wrap">
