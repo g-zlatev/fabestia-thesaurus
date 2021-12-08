@@ -9,17 +9,17 @@ function Footer() {
               <h4>Follow Us</h4>
               <ul className="inline">
                 <li>
-                  <a href="#" className="twitter-share border-box">
+                  <a href="/" className="twitter-share border-box">
                     <i className="fa fa-twitter fa-lg"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="facebook-share border-box">
+                  <a href="/" className="facebook-share border-box">
                     <i className="fa fa-facebook fa-lg"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="pinterest-share border-box">
+                  <a href="/" className="pinterest-share border-box">
                     <i className="fa fa-pinterest fa-lg"></i>
                   </a>
                 </li>
@@ -30,7 +30,7 @@ function Footer() {
           <section id="bottom-footer">
             <p className="keep-left">
               &copy; 2021{" "}
-              <a href="#" alt="FabestiaThesaurus">
+              <a href="/" alt="FabestiaThesaurus">
                 Fabestia
               </a>
               . All Rights Reserved.

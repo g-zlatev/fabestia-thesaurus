@@ -860,6 +860,7 @@ h6 {
 }
 
 .dribbble-items .item {
+    transform: scale3d(1, 1, 1);
     -webkit-transform: scale3d(1, 1, 1);
  /* Fix some Chrome flikering on hover */;
 }
@@ -1605,14 +1606,6 @@ section.greyish {
     border-style: none;
 }
 
-.gm-style > div.gmnoprint {
-    /* display: none; */
-}
-
-.gm-style > div > a {
-    /* display: none !important; */
-}
-
 .infoBox {
     text-align: center;
 }
@@ -1786,9 +1779,6 @@ section.greyish {
     animation-delay: .6s;
 }
 
-.no-cssanimations .owl-item.active .photocaption {
-    -ms-transform: translateX(0);   
-}
 
 .owl-item.active .intro-mockup img {
     opacity: 0;
@@ -2476,7 +2466,6 @@ footer .row-content.buffer {
     font-style: normal !important;
     font-variant: normal !important;
     font-family: "lineicon" !important;
-    speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -2488,7 +2477,6 @@ footer .row-content.buffer {
     font-style: normal !important;
     font-variant: normal !important;
     font-family: "lineicon" !important;
-    speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -2999,11 +2987,6 @@ footer .row-content.buffer {
 .big-icon .fa,
 .small-icon .fa {
     vertical-align: baseline;
-}
-
-.icon,
-.fa {
-    /* vertical-align: middle; */
 }
 
 
@@ -4056,7 +4039,6 @@ footer .row-content.buffer {
     position: relative;
     display: none;
     width: 100%;
-    -ms-touch-action: pan-y;
 }
 
 .owl-carousel .owl-wrapper {
@@ -4137,9 +4119,7 @@ footer .row-content.buffer {
     -o-perspective: 1200px;
     -o-perspective-origin-x: 50%;
     -o-perspective-origin-y: 50%;      
-    perspective: 1200px;
-    perspective-origin-x: 50%;
-    perspective-origin-y: 50%;     
+    perspective: 1200px;   
 }
 /* fade */
 .owl-fade-out {

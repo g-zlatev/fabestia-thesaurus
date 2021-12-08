@@ -11,7 +11,7 @@ function Header() {
             </h1>
           </div>
 
-          <a id="menu-toggle" href="#">
+          <a id="menu-toggle" href="/">
             <i className="fa fa-bars fa-lg"></i>
           </a>
           <nav>

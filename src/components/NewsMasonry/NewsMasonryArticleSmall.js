@@ -1,7 +1,7 @@
 function NewsMasonryArticleSmall() {
   return (
     <article className="item column three">
-      <a href="#">
+      <a href="/">
         <figure>
           <img
             src="http://placehold.it/800x600/ddd/fff&text=Beetle%20image"
