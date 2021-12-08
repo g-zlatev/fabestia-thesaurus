@@ -24,7 +24,7 @@ function NewsMasonry() {
 
         <div className="more-btn">
           <a className="button transparent aqua" href="/collection">
-            Read all News
+            View All Articles
           </a>
         </div>
       </div>

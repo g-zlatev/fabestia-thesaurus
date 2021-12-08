@@ -17,11 +17,11 @@ function Header() {
           <nav>
             <ul className="" role="navigation">
               <li className="menu-item">
-                <a href="/collection">Collection</a>
+                <a href="/collection">Articles</a>
               </li>
               
               <li className="menu-item">
-                <a href="/my-collection">My Collection</a>
+                <a href="/my-collection">My Articles</a>
                 <ul className="sub-menu">
                   <li>
                     <a href="/add">Add Entry</a>
