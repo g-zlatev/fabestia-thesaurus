@@ -1,14 +1,15 @@
-function IntroItem(props) {
+function IntroItem({ item }) {
+
   return (
     <div
       className="intro-item"
       style={{
-        backgroundImage: `url(${props.children.bgImage})`,
+        backgroundImage: `url(${item.bgImage})`,
       }}
     >
       <div className="caption">
-        <h2>{props.children.title}</h2>
-        <p>{props.children.text}</p>
+        <h2>{item.title}</h2>
+        <p>{item.text}</p>
         <a className="button white transparent" href="/">
           Read More
         </a>
@@ -16,7 +17,7 @@ function IntroItem(props) {
 
       <div className="photocaption">
         <h4>
-          Author: <a href="/">{props.children.author}</a>
+          Author: <a href="/">{item.author}</a>
         </h4>
       </div>
     </div>
