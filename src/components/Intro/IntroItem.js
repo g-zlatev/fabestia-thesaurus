@@ -1,5 +1,5 @@
 function IntroItem({ item }) {
-
+  
   return (
     <div
       className="intro-item"
