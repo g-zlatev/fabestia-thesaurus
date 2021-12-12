@@ -22,7 +22,7 @@ function NewsMasonry() {
 
   useEffect(() => {
     (async function () {
-      const q = query(collection(db, "articles"), limit(6));
+      const q = query(collection(db, "articles"), limit(3));
       const querySnapshot = await getDocs(q);
       setArticle(
         querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
@@ -40,15 +40,15 @@ function NewsMasonry() {
         </div>
         <div className="grid-items blog-section masonry-style preload">
           
-          {articles.map((x) => (
+          {/* {articles.map((x) => (
             <NewsMasonryArticleSmall key={x.id} article={x} />
-          ))}
+          ))} */}
 
-          {/* {articles.map((x, index) => (
+          {articles.map((x, index) => (
             index == 0 || index == 5 ?
             <NewsMasonryArticleBig key={x.id} article={x} />
             : <NewsMasonryArticleSmall key={x.id} article={x} />
-          ))} */}
+          ))}
 
           <div className="shuffle-sizer three"></div>
         </div>
