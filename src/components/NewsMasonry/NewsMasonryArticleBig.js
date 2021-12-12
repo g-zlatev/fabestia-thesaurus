@@ -1,10 +1,16 @@
-function NewsMasonryArticleBig() {
+function NewsMasonryArticleBig({ article }) {
+
   return (
     <article className="item column six">
       <a href="/">
         <figure>
           <img
-            src="http://placehold.it/800x600/ddd/fff&text=Beetle%20image"
+            style={{
+              objectFit: "cover",
+              width: "400px",
+              height: "400px",
+            }}
+            src={article.bgImage}
             alt=""
           />
           <span className="blog-overlay">
@@ -13,8 +19,8 @@ function NewsMasonryArticleBig() {
         </figure>
         <div className="blog-excerpt">
           <div className="blog-excerpt-inner">
-            <h5 className="meta-post">Interior design</h5>
-            <h2>A confortable desk</h2>
+            <h5 className="meta-post">{article.title}</h5>
+            <h2>{article.text}</h2>
           </div>
         </div>
       </a>

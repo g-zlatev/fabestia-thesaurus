@@ -41,7 +41,8 @@ function Intro() {
   //   );
   // }, []);
 
-  console.log(intros);
+
+  // console.log(intros);
 
   return (
     <div id="intro-wrap">
