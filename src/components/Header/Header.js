@@ -39,6 +39,9 @@ function Header() {
                 <a href="/login">Login</a>
               </li>
               <li className="menu-item">
+                <a href="/register">Register</a>
+              </li>
+              <li className="menu-item">
                 <a href="/logout">Logout</a>
               </li>
             </ul>

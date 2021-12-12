@@ -1,8 +1,8 @@
 import "./Intro.css";
 import IntroItem from "./IntroItem";
 import { useEffect, useState } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
-import db from "../../firebase";
+// import { collection, onSnapshot } from "firebase/firestore";
+// import db from "../../firebase";
 
 function Intro() {
   const [intros, setIntros] = useState([]);
