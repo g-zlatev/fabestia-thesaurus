@@ -1,13 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import * as authService from "../../services/authService";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
+  let navigate = useNavigate();
+  
+  const onLogin = (e) => {
+    e.preventDefault();
+
+    let formData = new FormData(e.currentTarget);
+    let email = formData.get("email");
+
+    authService.login(email);
+
+    navigate('/');
+  };
 
   return (
     <div className="Login">
@@ -21,8 +32,7 @@ export default function Login() {
               <form
                 id="contact-form"
                 className="contact-section"
-                method="post"
-                action=""
+                onSubmit={onLogin}
               >
                 <span className="pre-input">
                   <i className="icon icon-user"></i>
@@ -47,7 +57,7 @@ export default function Login() {
                 <input
                   id="send"
                   className="plain button red"
-                  type="button"
+                  type="submit"
                   value="Login"
                 />
               </form>

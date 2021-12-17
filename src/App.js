@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="page">
       <Header />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />

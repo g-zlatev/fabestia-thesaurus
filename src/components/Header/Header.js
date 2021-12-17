@@ -1,4 +1,6 @@
-import './Header.css'
+import { Link } from "react-router-dom";
+
+import "./Header.css";
 
 function Header() {
   return (
@@ -7,7 +9,7 @@ function Header() {
         <div className="nav-inner row-content buffer-left buffer-right even clear-after">
           <div id="brand">
             <h1 className="reset">
-              <a href="/">Fabestia</a>
+              <Link to="/">Fabestia</Link>
             </h1>
           </div>
 
@@ -17,32 +19,32 @@ function Header() {
           <nav>
             <ul className="" role="navigation">
               <li className="menu-item">
-                <a href="/collection">Articles</a>
+                <Link to="/collection">Articles</Link>
               </li>
-              
+
               <li className="menu-item">
-                <a href="/my-collection">My Articles</a>
+                <Link to="/my-collection">My Articles</Link>
                 <ul className="sub-menu">
                   <li>
-                    <a href="/add">Add Entry</a>
+                    <Link to="/add">Add Entry</Link>
                   </li>
                   <li>
-                    <a href="/edit">Edit Entry</a>
+                    <Link to="/edit">Edit Entry</Link>
                   </li>
                 </ul>
               </li>
 
               <li className="menu-item">
-                <a href="/contact">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li className="menu-item">
-                <a href="/login">Login</a>
+                <Link to="/login">Login</Link>
               </li>
               <li className="menu-item">
-                <a href="/register">Register</a>
+                <Link to="/register">Register</Link>
               </li>
               <li className="menu-item">
-                <a href="/logout">Logout</a>
+                <Link to="/logout">Logout</Link>
               </li>
             </ul>
           </nav>
@@ -51,6 +53,5 @@ function Header() {
     </header>
   );
 }
-
 
 export default Header;
