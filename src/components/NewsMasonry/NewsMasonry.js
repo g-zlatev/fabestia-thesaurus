@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import {
   collection,
   query,
-  where,
   getDocs,
-  orderBy,
   limit,
 } from "firebase/firestore";
 import db from "../../firebase";
@@ -45,7 +43,7 @@ function NewsMasonry() {
           ))} */}
 
           {articles.map((x, index) => (
-            index == 0 || index == 5 ?
+            index === 0 || index === 5 ?
             <NewsMasonryArticleBig key={x.id} article={x} />
             : <NewsMasonryArticleSmall key={x.id} article={x} />
           ))}
