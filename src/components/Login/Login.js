@@ -9,34 +9,53 @@ export default function Login() {
     return email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
-
   return (
     <div className="Login">
-      {/* <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button>
-      </Form> */}
+      <div id="main">
+        <section className="row section">
+          <div className="row-content buffer even clear-after">
+            <div className="section-title">
+              <h3>Login</h3>
+            </div>
+            <div className="column nine">
+              <form
+                id="contact-form"
+                className="contact-section"
+                method="post"
+                action=""
+              >
+                <span className="pre-input">
+                  <i className="icon icon-user"></i>
+                </span>
+                <input
+                  className="email plain buffer"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  autoComplete="username"
+                />
+                <span className="pre-input">
+                  <i className="icon icon-lock"></i>
+                </span>
+                <input
+                  className="name plain buffer"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  autoComplete="current-password"
+                />
+                <input
+                  id="send"
+                  className="plain button red"
+                  type="button"
+                  value="Login"
+                />
+              </form>
+              <div id="success"></div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
