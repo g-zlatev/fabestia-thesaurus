@@ -4,6 +4,7 @@ import Testimonial from "../Testimonial/Testimonial";
 import StatCounter from "../StatCounter/StatCounter";
 
 function HomePage() {
+
   return (
     <>
       <Intro />
