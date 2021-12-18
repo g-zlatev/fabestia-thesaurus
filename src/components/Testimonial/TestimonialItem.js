@@ -1,3 +1,5 @@
+import "./Testimonial.css"
+
 function TestimonialItem() {
   return (
     <div className="quote">

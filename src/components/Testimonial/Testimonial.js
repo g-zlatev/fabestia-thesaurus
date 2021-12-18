@@ -1,4 +1,5 @@
 import TestimonialItem from "./TestimonialItem";
+import "./Testimonial.css"
 
 function Testimonial() {
   return (
@@ -6,17 +7,11 @@ function Testimonial() {
       className="row section text-light"
       style={{ backgroundColor: "#4FC1E9" }}
     >
-      <div className="row-content buffer even clear-after">
+      <div className="row-content even clear-after testimonial-wrapper">
         <div
           className="testimonial-slider centertxt"
-          data-autoplay="5000"
-          data-pagination="true"
-          data-transition="fade"
-          data-autoheight="false"
         >
           <TestimonialItem />
-          <TestimonialItem />
-
         </div>
       </div>
     </section>

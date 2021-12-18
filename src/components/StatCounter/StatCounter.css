@@ -1,4 +1,51 @@
+/*----------------------------------------------------------------
+    Milestone
+----------------------------------------------------------------*/
+
+.count-item {
+  text-align: center;
+}
+
+.count-item .small-icon {
+  float: none;
+  margin: 0 auto 0.333em auto;
+}
+
 .counter-items {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.percent,
+.count-number,
+.count-number-done {
+  color: #666;
+  font-weight: 700;
+  font-size: 2.333em;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.34;
+}
+
+.text-light .percent,
+.text-light .count-number,
+.text-light .count-number-done {
+  color: #fff;
+}
+
+.chart-title,
+.count-subject {
+  font-weight: 700;
+  font-size: 0.889em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.counter-text {
+  font-weight: 700;
+  font-size: 0.889em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.count-number,
+.counter-text {
+  animation: 1s ease forwards;
 }
