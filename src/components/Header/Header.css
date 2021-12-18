@@ -1,73 +1,18 @@
+
 /*----------------------------------------------------------------
     Header menu
 ----------------------------------------------------------------*/
 
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 9;
-    padding: 0.5rem 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.97);
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.no-parallax header {
-    z-index: 9998 !important;
-    background-color: rgba(255, 255, 255, 0.97) !important;
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) !important;
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) !important;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) !important;
-}
-
-.no-parallax #intro {
-    position: relative !important;
-}
-
-.no-parallax header.transparent.light #brand a,
-.no-parallax header.transparent.light nav > ul > li > a {
-    color: #333 !important;
-}
-
-header.transition {
-    -webkit-transition: background-color 0.3s ease;
-    -moz-transition: background-color 0.3s ease;
-    -ms-transition: background-color 0.3s ease;
-    -o-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
-}
-
-header.transparent {
-    background-color: transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-
-header.transparent.light #brand a,
-header.transparent.light nav > ul > li > a,
-.caption {
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
-
-header.fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9998;
-    background-color: rgba(255, 255, 255, 0.97);
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    -webkit-transform: none !important;
-    -moz-transform: none !important;
-    -ms-transform: none !important;
-    -o-transform: none !important;
-    transform: none !important;
-}
 
 #brand {
     float: left;
@@ -84,59 +29,21 @@ nav a {
     line-height: 3rem;
 }
 
+.header-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15%;
+}
+
 nav {
     position: relative;
-    /* display: inline-block; */
-    float: right;
-    clear: none;
 }
 
 #brand a,
 nav a {
     color: #333;
-}
-
-#brand a img#default-logo,
-#brand a img#retina-logo {
-    float: left;
-    margin-top: 0.286em;
-    margin-right: 0.5em;
-    height: 1.143em;
-}
-
-#brand a img#retina-logo {
-    display: none;
-}
-
-/* retina logo */
-@media only screen and (-moz-min-device-pixel-ratio: 1.5),
-only screen and (-o-min-device-pixel-ratio: 3/2),
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5),
-only screen and (min-resolution: 144dpi) {
-
-    #brand a img#retina-logo {
-        display: block;
-    }
-
-    #brand a img#default-logo {
-        display: none;
-    }
-}
-
-header.transparent.light #brand a,
-header.transparent.light nav > ul > li > a {
-    color: #fff;
-}
-
-header.fixed-header.transparent.light #brand a,
-header.fixed-header.transparent.light nav > ul > li > a {
-    color: #333;
-    text-shadow: none;
-}
-
-header.fixed-header.transparent.light nav > ul > li:hover > a {
-    border-bottom: 2px solid #333;
 }
 
 nav > ul,
@@ -146,7 +53,8 @@ nav > ul > li {
 }
 
 nav > ul > li {
-    padding: 0 0.778em;
+    list-style: none;
+    padding: 0 1em;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.778em;
@@ -166,52 +74,29 @@ nav > ul > li:hover > a {
     border-bottom: 2px solid #333;
 }
 
-header.transparent.light nav > ul > li:hover > a {
-    border-bottom: 2px solid #fff;
-}
-
-nav li {
-    position: relative;
-    white-space: nowrap;
-}
 
 nav > ul li:hover > ul.sub-menu {
     display: block;
  /* show the submenu */;
 }
 
-nav .sub-arrow {
-    padding-left: 0.500em;
-    vertical-align: middle;
-    font-size: 0.714em;
-}
-
 nav ul.sub-menu {
     position: absolute;
-    left: 0;
+    /* left: 0; */
     z-index: 9999;
  /* level 2 */
     display: none;
     margin-bottom: 0;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
 }
 
-nav ul.sub-menu ul.sub-menu {
-    top: 0px;
-    left: 100%;
- /* level 3+ */
-    margin-top: -0.063rem;
-    padding-top: 0;
+nav ul.sub-menu li {
+    list-style: none;
 }
 
 nav ul.sub-menu > li > a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     background-color: #F6F6F6;
     font-size: 0.786em;
 }
@@ -227,196 +112,4 @@ nav ul.sub-menu > li:first-child > a {
 
 nav ul.sub-menu > li:last-child > a {
     border-radius: 0 0 2px 2px;
-}
-
-#menu-toggle {
-    display: none;
-    color: #CCC;
-    text-decoration: none;
-}
-
-#menu-toggle i {
-    line-height: 2;
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s;
-}
-
-#menu-toggle i.active {
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-1);
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-}
-
-#menu-toggle:hover {
-    color: #FD685B;
-}
-
-/*----------------------------------------------------------------
-    768px Breakpoint
-----------------------------------------------------------------*/
-
-@media handheld, only screen and (max-width:48em) {
-
-    header {
-        position: relative !important;
-        background-color: #fff !important;
-    }
-
-    #brand a,
-    nav a {
-        color: #333 !important;
-    }
-
-    nav a:hover {
-        color: #fff !important;
-    }
-
-    #brand,
-    nav,
-    #menu-toggle {
-        display: block;
-    }
-
-    #menu-toggle {
-        float: right;
-        clear: none;
-    }
-
-    nav {
-        float: none;
-        clear: both;
-    }
-
-    nav > ul {
-        margin-top: 2em;
-    }
-
-    #brand h1 {
-        line-height: 1.8;
-    }
-
-    nav > ul {
-        display: none;
-    }
-
-    nav > ul,
-    nav > ul > li {
-        float: none;
-    }
-
-    .sub-arrow {
-        display: none;
-    }
-
-    nav > ul li > a {
-        display: block;
-        margin: 0;
-        padding: 0.625rem 0;
-        border-bottom: 1px solid #DDD !important;
-        line-height: 1.250rem;
-    }
-
-    nav > ul > li > a:hover {
-        -webkit-border-radius: 0 !important;
-        -moz-border-radius: 0 !important;
-        border-radius: 0 !important;
-    }
-
-    nav > ul li.last > a,
-    nav > ul li.last > a:hover {
-        border-bottom: none !important;
-    }
-
-    nav > ul > li.menu-item {
-        padding: 0 !important;
-    }
-
-    nav ul.sub-menu > li > a {
-        -webkit-border-radius: 0 !important;
-        -moz-border-radius: 0 !important;
-        border-radius: 0 !important;
-    }
-
-    nav ul.sub-menu > li > a {
-        color: #666 !important;
-        font-size: 0.688rem;
-    }
-
-    nav ul.sub-menu > li > a,
-    nav ul li > a:hover {
-        background-color: transparent !important;
-    }
-
-    nav ul li > a:hover {
-        color: #FD685B !important;
-    }
-
-    nav > ul > li:hover > a {
-        border-bottom: none;
-    }
-
-    nav ul.sub-menu {
-        position: static;
-        display: block;
-        padding: 0 0 0 1.5em;
-        width: inherit;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-
-    #intro {
-        position: relative;
-    }
-
-    .more {
-        display: none;
-    }
-
-    .column .count-item {
-        margin-bottom: 2em;
-    }
-
-    .column.last .count-item {
-        margin-bottom: 0;
-    }
-
-    .carousel-item {
-        text-align: center;
-    }
-
-    .carousel-item img,
-    .about-us img,
-    .testimonial-img img {
-        margin: 0 auto;
-    }
-
-    .carousel-item img {
-        max-width: 12.5em;
-    }
-
-    .about-us img {
-        max-width: 20em;
-        width: 100%;
-    }
-
-    .testimonial-img img {
-        margin-bottom: 1em;
-        max-width: 10em;
-        width: 100%;
-    }
-
-    .testimonial-slider {
-        text-align: center;
-    }
-
-    .blog.list-style article figure,
-    .blog-section.list-style article figure,
-    .search.list-style article figure {
-        margin-bottom: 1em;
-    }
 }

@@ -1,0 +1,138 @@
+/*----------------------------------------------------------------
+    General Rules
+----------------------------------------------------------------*/
+
+::selection {
+    background: #FD685B;
+    color: #fff;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+ /* font-size: 16px; */;
+}
+
+body {
+    background-color: #fbfbfb;
+    color: #333;
+    font-size: 1.125em; /* font-size: 18px; */
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.34;
+    text-rendering: auto; /* Android browser */
+}
+
+a {
+    color: #222;
+    text-decoration: underline;
+}
+
+input[type=""],
+input:not([type]),
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+textarea,
+textarea.plain {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 0.333em;
+    -moz-border-radius: 0.333em;
+    border-radius: 0.333em;
+    color: #333;
+}
+
+img {
+    display: block;
+}
+
+.centertxt {
+    text-align: center;
+}
+
+#main {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    background-color: #fbfbfb;
+}
+
+section {
+    overflow-x: hidden;
+}
+
+/*----------------------------------------------------------------
+    Buttons
+----------------------------------------------------------------*/
+
+.button,
+input.button {
+    position: relative;
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: 1.34em;
+    padding: 0.667em 2em;
+    border-bottom: none;
+    -webkit-border-radius: 0.333em;
+    -moz-border-radius: 0.333em;
+    border-radius: 0.333em;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 0.778em !important;
+    font-family: 'Montserrat', sans-serif !important;
+    line-height: 1.714em !important;
+    cursor: pointer;
+}    
+
+.csstransitions .button,
+.csstransitions input.button {
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.button:hover,
+input.button:hover {
+    border-bottom: none;
+    background-color: rgba(84,87,102,0.9);
+}
+
+.button:active,
+input.button:active {
+    box-shadow: inset 0 3px 1px rgba(0,0,0,0.1);
+}
+
+.button i {
+    margin-right: 0.667em;
+    vertical-align: middle;
+    line-height: 1em !important;
+}
+.button.transparent.white,
+input.transparent.button.white {
+    border: 2px solid rgba(255,255,255,1);
+    color: rgba(255,255,255,1) !important;
+}
+
+.button.transparent.white:hover,
+input.button.transparent.white:hover {
+    border: 2px solid rgba(255,255,255,1);
+    background-color: rgba(255,255,255,1);
+    color: #545766 !important;
+}
