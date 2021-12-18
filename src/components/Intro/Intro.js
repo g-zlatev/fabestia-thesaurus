@@ -25,10 +25,6 @@ function Intro() {
         <div
           id="intro"
           className="preload darken"
-          data-autoplay="5000"
-          data-navigation="true"
-          data-pagination="true"
-          data-transition="fadeUp"
         >
           <div>Loading...</div>
         </div>
@@ -41,10 +37,6 @@ function Intro() {
       <div
         id="intro"
         className="preload darken"
-        data-autoplay="5000"
-        data-navigation="true"
-        data-pagination="true"
-        data-transition="fadeUp"
       >
         <IntroItem key={item.id} item={item} />
       </div>

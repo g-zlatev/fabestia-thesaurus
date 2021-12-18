@@ -1,4 +1,3 @@
-
 /*----------------------------------------------------------------
     Intro
 ----------------------------------------------------------------*/
@@ -6,12 +5,12 @@
 #intro-wrap {
     position: relative;
     width: 100%;
-    height: 33.333em;
-    background-color: #363842;
+    height: 26em;
+    /* background-color: #363842; */
 }
 
 #intro {
-    position: fixed;
+    /* position: fixed; */
     width: inherit;
     height: inherit;
 }
@@ -21,114 +20,42 @@
     width: inherit;
     height: inherit;
     background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#intro.preload .intro-item {
-    visibility: hidden;
-}
 
-.darkover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.35);
-}
-
-#intro .intro-mockup,
 .caption,
-.caption-mockup,
 .photocaption {
-    z-index: 2;
+    position: absolute;
 }
 
 .caption {
-    padding-top: 10%;
-}
-
-.caption,
-.photocaption {
-    position: absolute;
-}
-
-#intro .intro-mockup-wrapper,
-.photocaption {
-    margin: 0 auto;
-    padding: 0 8%;
-}
-
-#intro .intro-mockup-wrapper {
-    max-width: 70em;
-}
-
-#intro .intro-mockup img {
-    margin: 0 auto;
-    max-width: 40em;
-}
-
-#intro .intro-mockup.intro-left img,
-#intro .intro-mockup.intro-right img {
-    max-width: 20em;
-}
-
-.owl-item .caption h2,
-.owl-item .caption p,
-.owl-item .caption .button,
-.owl-item .caption-mockup h2,
-.owl-item .caption-mockup p,
-.owl-item .caption-mockup .button,
-.owl-item .photocaption {
-    opacity: 0;
-}
-
-.caption,
-.caption-mockup {
     width: 100%;
     text-align: center;
+    padding-top: 7em;
+}
+
+.intro-text-wrapper {
+    background-color: #80808057;
 }
 
 .caption,
 .caption h2,
-.caption-mockup,
-.caption-mockup h2,
 .photocaption,
 .photocaption h4 {
     color: #fff;
 }
 
-.caption.dark,
-.caption.dark h2,
-.caption-mockup.dark,
-.caption-mockup.dark h2 {
-    color: #333;
-}
-
-.caption h2,
-.caption-mockup h2 {
+.caption h2 {
     margin-bottom: 0.222em;
     font-size: 3em;
-}
-
-.caption h2 {
     margin-top: 0;
 }
 
 .caption p,
 .caption-mockup p {
     margin-top: 0;
-}
-
-.caption-mockup.caption-left {
-    float: left;
-}
-
-.caption-mockup.caption-right {
-    float: right;
 }
 
 .photocaption {
@@ -149,7 +76,6 @@
 }
 
 .caption a,
-.caption-mockup a,
 .photocaption a {
     color: #fff;
 }
@@ -163,21 +89,9 @@
     font-size: 2.667em;
 }
 
-/* #intro-wrap:hover .preload .more a {
-    opacity: 0;
-    filter: Alpha(Opacity=0);
-}
-
 #intro-wrap .more a {
     color: #fff;
     opacity: 0;
     filter: Alpha(Opacity=0);
-    -webkit-transition: opacity .3s ease;
-    -moz-transition: opacity .3s ease;
     transition: opacity .3s ease;
 }
-
-#intro-wrap:hover .more a {
-    opacity: 1;
-    filter: Alpha(Opacity=100);
-} */
