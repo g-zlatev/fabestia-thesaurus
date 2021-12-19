@@ -8,7 +8,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   let navigate = useNavigate();
-  
+
   const onLogin = (e) => {
     e.preventDefault();
 
@@ -17,54 +17,53 @@ export default function Login() {
 
     authService.login(email);
 
-    navigate('/');
+    navigate("/");
   };
 
   return (
-    <div className="Login">
-      <div id="main">
-        <section className="row section">
-          <div className="row-content buffer even clear-after">
-            <div className="section-title">
-              <h3>Login</h3>
-            </div>
-            <div className="column nine">
-              <form
-                id="contact-form"
-                className="contact-section"
-                onSubmit={onLogin}
-              >
-                <span className="pre-input">
-                  <i className="icon icon-user"></i>
-                </span>
-                <input
-                  className="email plain buffer"
-                  type="email"
-                  name="email"
-                  placeholder="E-mail"
-                  autoComplete="username"
-                />
-                <span className="pre-input">
-                  <i className="icon icon-lock"></i>
-                </span>
-                <input
-                  className="name plain buffer"
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  autoComplete="current-password"
-                />
-                <input
-                  id="send"
-                  className="plain button red"
-                  type="submit"
-                  value="Login"
-                />
-              </form>
-              <div id="success"></div>
+    <div className="auth-wrapper">
+      <div className="auth-inner">
+        <form>
+          <h3>Sign In</h3>
+
+          <div className="form-group">
+            <label>Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter email"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
+            />
+          </div>
+
+          <div className="form-group">
+            <div className="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                className="custom-control-input"
+                id="customCheck1"
+              />
+              <label className="custom-control-label" htmlFor="customCheck1">
+                Remember me
+              </label>
             </div>
           </div>
-        </section>
+
+          <button type="submit" className="btn btn-primary btn-block">
+            Submit
+          </button>
+          <p className="forgot-password text-right">
+            Forgot <a href="#">password?</a>
+          </p>
+        </form>
       </div>
     </div>
   );
