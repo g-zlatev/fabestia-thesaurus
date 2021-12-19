@@ -3,45 +3,42 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import * as authService from "../../services/authService";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+function Login({ onLogin }) {
   let navigate = useNavigate();
 
-  const onLogin = (e) => {
+  const onLoginHandler = (e) => {
     e.preventDefault();
 
     let formData = new FormData(e.currentTarget);
     let email = formData.get("email");
 
     authService.login(email);
-
+    onLogin(email);
     navigate("/");
   };
 
   return (
     <div className="auth-wrapper">
       <div className="auth-inner">
-        <form>
+        <form onSubmit={onLoginHandler} method="POST">
           <h3>Sign In</h3>
 
           <div className="form-group">
-            <label>Email address</label>
+            <label htmlFor="email">Email address</label>
             <input
               type="email"
+              name="email"
               className="form-control"
-              placeholder="Enter email"
-            />
+              placeholder="Enter email" />
           </div>
 
           <div className="form-group">
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
+              name="password"
               className="form-control"
-              placeholder="Enter password"
-            />
+              placeholder="Enter password" />
           </div>
 
           <div className="form-group">
@@ -49,8 +46,7 @@ export default function Login() {
               <input
                 type="checkbox"
                 className="custom-control-input"
-                id="customCheck1"
-              />
+                id="customCheck1" />
               <label className="custom-control-label" htmlFor="customCheck1">
                 Remember me
               </label>
@@ -68,3 +64,6 @@ export default function Login() {
     </div>
   );
 }
+
+
+export default Login;
