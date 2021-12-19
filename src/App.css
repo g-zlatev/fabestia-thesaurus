@@ -136,3 +136,16 @@ input.button.transparent.white:hover {
     background-color: rgba(255,255,255,1);
     color: #545766 !important;
 }
+
+.button.transparent.aqua,
+input.transparent.button.white {
+    border: 2px solid #5FC6EA;
+    color: #5FC6EA !important;
+}
+
+.button.transparent.aqua:hover,
+input.button.transparent.white:hover {
+    border: 2px solid #f2fbff;
+    background-color: #5FC6EA;
+    color: #fff !important;
+}

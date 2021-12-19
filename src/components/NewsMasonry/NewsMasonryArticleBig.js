@@ -3,7 +3,7 @@ function NewsMasonryArticleBig({ article }) {
   let shortenDesc = article.text.slice(0, 100) + "... Read more";
 
   return (
-    <article className="item column six">
+    <article className="item column six masonry-article-card">
       <a href="/">
         <figure>
           <img
@@ -21,7 +21,7 @@ function NewsMasonryArticleBig({ article }) {
           </span>
         </figure>
         <div className="blog-excerpt">
-          <div className="blog-excerpt-inner">
+          <div className="blog-excerpt-inner masonry-card-big">
             <h5 className="meta-post">{article.title}</h5>
             <h2>{shortenDesc}</h2>
           </div>

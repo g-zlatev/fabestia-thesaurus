@@ -3,7 +3,7 @@ function NewsMasonryArticleSmall({ article }) {
   let shortenDesc = article.text.slice(0, 100) + "... Read more";
 
   return (
-    <article className="item column three">
+    <article className="item column three masonry-article-card">
       <a href="/">
         <figure>
           <img

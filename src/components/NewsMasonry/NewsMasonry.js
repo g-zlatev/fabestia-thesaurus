@@ -1,3 +1,4 @@
+import "./NewsMasonry.css"
 import NewsMasonryArticleBig from "./NewsMasonryArticleBig";
 import NewsMasonryArticleSmall from "./NewsMasonryArticleSmall";
 import { useEffect, useState } from "react";
@@ -36,7 +37,7 @@ function NewsMasonry() {
         <div className="section-title">
           <h3>Latest Articles</h3>
         </div>
-        <div className="grid-items blog-section masonry-style preload">
+        <div className="grid-items blog-section masonry-style">
           
           {/* {articles.map((x) => (
             <NewsMasonryArticleSmall key={x.id} article={x} />
