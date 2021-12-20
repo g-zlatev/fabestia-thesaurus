@@ -1,0 +1,14 @@
+.article-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__cover {
+    height: 150px;
+    width: 100%;
+}
+
+.card__content {
+    /* Take available height */
+    flex: 1;
+}

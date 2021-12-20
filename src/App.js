@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
 import Login from "./components/Login/Login";
+import AllArticles from "./components/Articles/AllArticles";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -37,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
+        <Route path="/collection" element={<AllArticles />} />
       </Routes>
 
       <Footer />
