@@ -29,6 +29,7 @@ function Login({ onLogin }) {
               <input
                 type="email"
                 name="email"
+                autoComplete="username"
                 className="form-control"
                 placeholder="Enter email"
               />
@@ -39,6 +40,7 @@ function Login({ onLogin }) {
               <input
                 type="password"
                 name="password"
+                autoComplete="current-password"
                 className="form-control"
                 placeholder="Enter password"
               />
