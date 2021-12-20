@@ -10,7 +10,7 @@ function Header(isAuthenticated, username) {
           <Link to="/collection">Articles</Link>
         </li>
         <li className="menu-item">
-          <Link to="/my-collection">My Articles</Link>
+          <Link to="/collection/my-articles">My Articles</Link>
           <ul className="sub-menu">
             <li>
               <Link to="/add">Add Entry</Link>

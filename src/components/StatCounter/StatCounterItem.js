@@ -1,5 +1,4 @@
 function StatCounterItem({num}) {
-  // console.log(num);
 
   return (
     <div className="column three">
