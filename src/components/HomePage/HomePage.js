@@ -8,12 +8,12 @@ function HomePage() {
   return (
     <>
       <Intro />
-      <main role="main">
         <div id="main">
           <NewsMasonry />
           <Testimonial />
           <StatCounter />
         </div>
+      <main role="main">
       </main>
     </>
   );

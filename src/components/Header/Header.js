@@ -49,8 +49,6 @@ function Header(isAuthenticated, username) {
     </nav>
   );
 
-  console.log(isAuthenticated);
-
   return (
     <header className="header">
       <div className="header-wrapper">
