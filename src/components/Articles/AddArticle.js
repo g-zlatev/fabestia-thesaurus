@@ -3,12 +3,13 @@ import db from "../../firebase";
 
 const AddArticle = () => {
 
-    const addArticle = async (title, author, imageUrl, content) => {
+    const addArticle = async (title, author, imageUrl, content, dateAdded) => {
         const docRef = await addDoc(collection(db, "articles"), {
             title,
             author,
             bgImage: imageUrl,
             text: content,
+            dateAdded,
           });
           console.log("Document written with ID: ", docRef.id);
     }
@@ -21,8 +22,9 @@ const AddArticle = () => {
         let author = formData.get('author');
         let imageUrl = formData.get('imageUrl');
         let content = formData.get('content');
+        let dateAdded = new Date();
 
-        addArticle(title, author, imageUrl, content);
+        addArticle(title, author, imageUrl, content, dateAdded);
     }
 
   return (
