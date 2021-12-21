@@ -39,9 +39,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
-        <Route path="collection" element={<AllArticles />}>
-          <Route path="my-articles" element={<MyArticles />} />
+        <Route path="articles" element={<AllArticles />}>
+          {/* <Route path="edit" element={<p>Edit article</p>} /> */}
         </Route>
+        <Route path="articles/my-articles" element={<MyArticles />} />
+        <Route path="articles/add" element={<p>Add article</p>} />
       </Routes>
 
       <Footer />

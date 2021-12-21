@@ -7,17 +7,17 @@ function Header(isAuthenticated, username) {
     <nav>
       <ul className="" role="navigation">
         <li className="menu-item">
-          <Link to="/collection">Articles</Link>
+          <Link to="/articles">Articles</Link>
         </li>
         <li className="menu-item">
-          <Link to="/collection/my-articles">My Articles</Link>
+          <Link to="/articles/my-articles">My Articles</Link>
           <ul className="sub-menu">
             <li>
-              <Link to="/add">Add Entry</Link>
+              <Link to="/articles/add">Add Entry</Link>
             </li>
-            <li>
-              <Link to="/edit">Edit Entry</Link>
-            </li>
+            {/* <li>
+              <Link to="/articles/edit">Edit Entry</Link>
+            </li> */}
           </ul>
         </li>
         <li className="menu-item">
@@ -34,7 +34,7 @@ function Header(isAuthenticated, username) {
     <nav>
       <ul className="" role="navigation">
         <li className="menu-item">
-          <Link to="/collection">Articles</Link>
+          <Link to="/articles">Articles</Link>
         </li>
         <li className="menu-item">
           <Link to="/login">Login</Link>

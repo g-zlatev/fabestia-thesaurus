@@ -1,5 +1,6 @@
 import "./AllArticles.css";
 import ArticleCard from "./ArticleCard";
+import ArticleErrorNotice from "./ArticleErrorNotice";
 
 import { useState, useEffect } from "react";
 import { getData } from "../../services/getDataService";
@@ -19,11 +20,14 @@ const AllArticles = () => {
 
   return (
     <div className="all-articles-container">
-      <div className="row row-cols-1 row-cols-md-2 g-4 ">
-        {articles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
-      </div>
+      {articles.length > 0 
+      ? (
+        <div className="row row-cols-1 row-cols-md-2 g-4 ">
+          {articles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </div>) 
+        : (<ArticleErrorNotice />)}
     </div>
   );
 };
