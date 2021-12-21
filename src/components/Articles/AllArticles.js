@@ -3,7 +3,7 @@ import ArticleCard from "./ArticleCard";
 import ArticleErrorNotice from "./ArticleErrorNotice";
 
 import { useState, useEffect } from "react";
-import { getData } from "../../services/getDataService";
+import { getAllArticles } from "../../services/articlesService";
 
 const AllArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -15,7 +15,7 @@ const AllArticles = () => {
   // }, []);
 
   useEffect(() => {
-    getData().then((x) => setArticles(x));
+    getAllArticles().then((x) => setArticles(x));
   }, []);
 
   return (

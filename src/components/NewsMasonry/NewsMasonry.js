@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { getOrderedData } from "../../services/getDataService";
+import { getOrderedArticles } from "../../services/articlesService";
 
 import "./NewsMasonry.css";
 import NewsMasonryArticleBig from "./NewsMasonryArticleBig";
@@ -11,7 +11,7 @@ function NewsMasonry() {
   const [articles, setArticle] = useState([]);
 
   useEffect(() => {
-    getOrderedData("dateAdded", 3).then((x) => setArticle(x));
+    getOrderedArticles("dateAdded", 3).then((x) => setArticle(x));
   }, []);
 
   // console.log(articles);

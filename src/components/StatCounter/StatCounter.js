@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import StatCounterItem from "./StatCounterItem";
 import "./StatCounter.css";
-import { getData } from "../../services/getDataService";
+import { getAllArticles } from "../../services/articlesService";
 
 function StatCounter() {
   const [num, setNum] = useState(0);
 
   useEffect(() => {
-    getData().then((x) => {
+    getAllArticles().then((x) => {
       setNum(x.length);
     });
   });
