@@ -3,14 +3,14 @@ import ArticleCard from "./ArticleCard";
 import ArticleErrorNotice from "./ArticleErrorNotice";
 
 import { useState, useEffect } from "react";
-import { getData } from "../../services/getDataService";
+import { getOrderedData } from "../../services/getDataService";
 
 const MyArticles = () => {
   const [articles, setArticles] = useState([]);
 
   //TODO: Change logic to get only own articles
   useEffect(() => {
-    getData().then((x) => setArticles(x.slice(0, 2)));
+    getOrderedData("dateAdded", 2).then((x) => setArticles(x));
   }, []);
 
   let uid = 1234;
