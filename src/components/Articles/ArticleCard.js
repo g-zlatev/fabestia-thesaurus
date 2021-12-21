@@ -9,7 +9,7 @@ const ArticleCard = ({ article, userId }) => {
         <div className="card-body">
           <h5 className="card-title">{article.title}</h5>
           <p className="card-text">{article.text}</p>
-          <Link to={`details/${article.id}`}>
+          <Link to={`/articles/details/${article.id}`}>
             <button type="button" className="btn btn-outline-info">
               Details
             </button>

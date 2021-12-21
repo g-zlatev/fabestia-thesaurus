@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import * as authService from "../../services/authService";
@@ -62,9 +62,9 @@ function Login({ onLogin }) {
             <button type="submit" className="btn btn-primary btn-block">
               Submit
             </button>
-            <p className="forgot-password text-right">
+            {/* <p className="forgot-password text-right">
               Forgot <a href="#">password?</a>
-            </p>
+            </p> */}
           </form>
         </div>
       </div>

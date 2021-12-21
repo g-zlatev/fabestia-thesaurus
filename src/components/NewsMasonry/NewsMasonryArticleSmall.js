@@ -1,16 +1,17 @@
-function NewsMasonryArticleSmall({ article }) {
+import { Link } from "react-router-dom";
 
+function NewsMasonryArticleSmall({ article }) {
   let shortenDesc = article.text.slice(0, 100) + "... Read more";
 
   return (
     <article className="item column three masonry-article-card">
-      <a href="/">
+      <Link to={`/articles/details/${article.id}`}>
         <figure>
           <img
-          style={{
-            objectFit: "contain",
-            height: "230px",
-          }}
+            style={{
+              objectFit: "contain",
+              height: "230px",
+            }}
             src={article.bgImage}
             alt=""
           />
@@ -22,12 +23,10 @@ function NewsMasonryArticleSmall({ article }) {
           <div className="blog-excerpt-inner">
             <h5 className="meta-post">{article.author}</h5>
             <h2>{article.title}</h2>
-            <p>
-            {shortenDesc}
-            </p>
+            <p>{shortenDesc}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </article>
   );
 }

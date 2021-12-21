@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function IntroItem({ item }) {
   return (
     <div id="intro-wrap">
@@ -16,14 +18,14 @@ function IntroItem({ item }) {
             <div className="intro-text-wrapper">
               <h2>{item.title}</h2>
               <p>{item.text}</p>
-              <a className="button white transparent csstransitions" href="/">
+              <Link className="button white transparent csstransitions" to={`/articles/details/${item.id}`}>
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
           <div className="photocaption">
             <h4>
-              Author: <a href="/">{item.author}</a>
+              Author: <Link to="/">{item.author}</Link>
             </h4>
           </div>
         </div>

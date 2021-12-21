@@ -1,17 +1,18 @@
-function NewsMasonryArticleBig({ article }) {
+import { Link } from "react-router-dom";
 
+function NewsMasonryArticleBig({ article }) {
   let shortenDesc = article.text.slice(0, 100) + "... Read more";
 
   return (
     <article className="item column six masonry-article-card">
-      <a href="/">
+      <Link to={`/articles/details/${article.id}`}>
         <figure>
           <img
             style={{
               objectFit: "contain",
               width: "400px",
               height: "400px",
-              margin: "0 auto"
+              margin: "0 auto",
             }}
             src={article.bgImage}
             alt=""
@@ -26,7 +27,7 @@ function NewsMasonryArticleBig({ article }) {
             <h2>{shortenDesc}</h2>
           </div>
         </div>
-      </a>
+      </Link>
     </article>
   );
 }
