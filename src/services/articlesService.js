@@ -3,6 +3,7 @@ import {
   collection,
   doc,
   query,
+  getDoc,
   getDocs,
   addDoc,
   updateDoc,
@@ -15,6 +16,12 @@ export async function getAllArticles() {
   let res = [];
   querySnapshot.forEach((doc) => res.push({ ...doc.data(), id: doc.id }));
   return res;
+}
+
+export async function getOneById(id) {
+  const docRef = doc(db, "articles", id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
 }
 
 export async function getOrderedArticles(orderParam, limitParam) {
