@@ -31,7 +31,7 @@ function Header(isAuthenticated, username) {
   );
 
   let guestNavigation = (
-    <nav>
+    <nav className="">
       <ul className="" role="navigation">
         <li className="menu-item">
           <Link to="/articles">Articles</Link>

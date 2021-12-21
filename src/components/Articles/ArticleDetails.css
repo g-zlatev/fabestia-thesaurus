@@ -1,5 +1,19 @@
 .article-detail-container {
-    width: 50%;
+    width: 60em;
     margin: 50px auto;
+    padding: 0 6em;
 }
 
+.article-details-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.details-page-button-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.details-page-button-wrapper button {
+    margin-right: 15px;
+}
