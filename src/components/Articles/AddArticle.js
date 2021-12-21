@@ -1,7 +1,33 @@
+import { collection, addDoc } from "firebase/firestore";
+import db from "../../firebase";
+
 const AddArticle = () => {
+
+    const addArticle = async (title, author, imageUrl, content) => {
+        const docRef = await addDoc(collection(db, "articles"), {
+            title,
+            author,
+            bgImage: imageUrl,
+            text: content,
+          });
+          console.log("Document written with ID: ", docRef.id);
+    }
+
+    const onArticleCreate = (e) => {
+        e.preventDefault();
+        let formData = new FormData(e.currentTarget);
+
+        let title = formData.get('title');
+        let author = formData.get('author');
+        let imageUrl = formData.get('imageUrl');
+        let content = formData.get('content');
+
+        addArticle(title, author, imageUrl, content);
+    }
+
   return (
 
-    <div className="mx-auto" style={{ width: "500px", padding: "50px" }}>
+    <form className="mx-auto" onSubmit={onArticleCreate} method="POST" style={{ width: "500px", padding: "50px" }}>
         <h2 className="add-article-title">Add New Article</h2>
       <div className="mb-3">
         <label htmlFor="article-title" className="form-label">
@@ -11,7 +37,7 @@ const AddArticle = () => {
           type="text"
           className="form-control"
           id="article-title"
-          name="article-title"
+          name="title"
           placeholder="Article title"
         />
       </div>
@@ -23,7 +49,7 @@ const AddArticle = () => {
           type="text"
           className="form-control"
           id="article-author"
-          name="article-author"
+          name="author"
           placeholder="Article author"
         />
       </div>
@@ -35,11 +61,11 @@ const AddArticle = () => {
           type="url"
           className="form-control"
           id="article-image"
-          name="article-image"
+          name="imageUrl"
           placeholder="Enter valid image url"
         />
       </div>
-      <div className="mb-3 input-text">
+      <div className="mb-3">
         <label htmlFor="article-content" className="form-label">
           Content
         </label>
@@ -47,7 +73,7 @@ const AddArticle = () => {
           type="text"
           className="form-control"
           id="article-content"
-          name="article-content"
+          name="content"
           placeholder="Enter the article contents here"
         />
       </div>
@@ -56,7 +82,7 @@ const AddArticle = () => {
           Submit
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
