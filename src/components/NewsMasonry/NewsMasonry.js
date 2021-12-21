@@ -1,28 +1,17 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import { getOrderedData } from "../../services/getDataService";
+
 import "./NewsMasonry.css";
 import NewsMasonryArticleBig from "./NewsMasonryArticleBig";
 import NewsMasonryArticleSmall from "./NewsMasonryArticleSmall";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { collection, query, getDocs, limit } from "firebase/firestore";
-import db from "../../firebase";
 
 function NewsMasonry() {
   const [articles, setArticle] = useState([]);
 
-  //  useEffect(() => {
-  //   onSnapshot(collection(db, "articles"), (snapshot) => {
-  //     setArticle(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   });
-  // }, []);
-
   useEffect(() => {
-    (async function () {
-      const q = query(collection(db, "articles"), limit(3));
-      const querySnapshot = await getDocs(q);
-      setArticle(
-        querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-      );
-    })();
+    getOrderedData("dateAdded", 3).then((x) => setArticle(x));
   }, []);
 
   // console.log(articles);
