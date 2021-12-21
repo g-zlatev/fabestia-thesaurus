@@ -9,11 +9,13 @@ const ArticleCard = ({ article, userId }) => {
         <div className="card-body">
           <h5 className="card-title">{article.title}</h5>
           <p className="card-text">{article.text}</p>
-          <button type="button" className="btn btn-outline-info">
-            Details
-          </button>
+          <Link to={`details/${article.id}`}>
+            <button type="button" className="btn btn-outline-info">
+              Details
+            </button>
+          </Link>
           {userId && (
-            <Link to="edit">
+            <Link to={`edit/${article.id}`}>
               <button type="button" className="btn btn-outline-info ms-3">
                 Edit
               </button>

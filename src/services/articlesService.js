@@ -1,12 +1,14 @@
 import db from "../firebase";
 import {
   collection,
+  doc,
   query,
   getDocs,
+  addDoc,
+  updateDoc,
   orderBy,
   where,
   limit,
-  addDoc,
 } from "firebase/firestore";
 
 export async function getAllArticles() {
@@ -43,4 +45,14 @@ export async function createArticle(
     dateAdded,
   });
   console.log("Document written with ID: ", docRef.id);
+}
+
+
+//TODO: Check if working
+export async function editArticle(id, { editedArticle }) {
+  const article = doc(db, "articles", id);
+
+  await updateDoc(article, {
+    editedArticle,
+  });
 }
