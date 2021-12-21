@@ -10,6 +10,7 @@ import HomePage from "./components/HomePage/HomePage";
 import Login from "./components/Login/Login";
 import AllArticles from "./components/Articles/AllArticles";
 import MyArticles from "./components/Articles/MyArticles";
+import AddArticle from "./components/Articles/AddArticle";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -43,7 +44,7 @@ function App() {
           {/* <Route path="edit" element={<p>Edit article</p>} /> */}
         </Route>
         <Route path="articles/my-articles" element={<MyArticles />} />
-        <Route path="articles/add" element={<p>Add article</p>} />
+        <Route path="articles/add" element={<AddArticle />} />
       </Routes>
 
       <Footer />
