@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getOneById, editArticle } from "../../services/articlesService";
 
 import "./ArticleDetails.css";
@@ -17,7 +17,7 @@ const EditArticle = () => {
         time: new Date(x.dateAdded.seconds * 1000).toLocaleString("en-GB"),
       })
     );
-  }, []);
+  }, [articleId]);
 
 
 

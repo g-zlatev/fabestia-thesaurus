@@ -15,7 +15,7 @@ const ArticleDetails = () => {
         time: new Date(x.dateAdded.seconds * 1000).toLocaleString("en-GB"),
       })
     );
-  }, []);
+  }, [articleId]);
 
   //   console.log(article);
 
@@ -39,12 +39,12 @@ const ArticleDetails = () => {
       </div>
       <div className="details-page-button-wrapper">
         <Link to={`/articles/edit/${articleId}`}>
-          <button type="button" class="btn btn-warning">
+          <button type="button" className="btn btn-warning">
             Edit Article
           </button>
         </Link>
         <Link to={`/articles/delete/${articleId}`}>
-          <button type="button" class="btn btn-danger">
+          <button type="button" className="btn btn-danger">
             Delete Article
           </button>
         </Link>
