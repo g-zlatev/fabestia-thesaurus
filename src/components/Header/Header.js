@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { AuthContext } from "../../contexts/AuthContext";
 
 import "./Header.css";
 
-function Header({ email }) {
+function Header() {
+  const { userInfo } = useContext(AuthContext);
+
   let userNavigation = (
     <nav>
       <ul className="" role="navigation">
@@ -57,8 +62,10 @@ function Header({ email }) {
             <Link to="/">Fabestia</Link>
           </h1>
         </div>
-        <p className="header-user-info">Currently browsing as: <br></br> {email || "Guest"}</p>
-        {email ? userNavigation : guestNavigation}
+        <p className="header-user-info">
+          Currently browsing as: <br></br> {userInfo.email || "Guest"}
+        </p>
+        {userInfo.email ? userNavigation : guestNavigation}
       </div>
     </header>
   );

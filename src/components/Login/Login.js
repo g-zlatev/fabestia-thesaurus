@@ -1,9 +1,12 @@
-// import React, { useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./Login.css";
 import * as authService from "../../services/authService";
+import { AuthContext } from "../../contexts/AuthContext";
 
-function Login({ onLogin }) {
+function Login() {
+  const { login } = useContext(AuthContext);
   let navigate = useNavigate();
 
   const onLoginHandler = (e) => {
@@ -17,7 +20,11 @@ function Login({ onLogin }) {
       .then((userCredential) => {
         const user = userCredential.user;
         // console.log(user);
-        onLogin({uid: user.uid, email: user.email, accessToken: user.accessToken});
+        login({
+          uid: user.uid,
+          email: user.email,
+          accessToken: user.accessToken,
+        });
         navigate("/");
       })
       .catch((error) => {

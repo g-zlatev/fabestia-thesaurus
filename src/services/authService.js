@@ -2,6 +2,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 
 export const register = (email, password) => {
@@ -15,14 +16,11 @@ export const login = (email, password) => {
 };
 
 export const logout = () => {
-  localStorage.removeItem("username");
+  const auth = getAuth();
+  return signOut(auth);
 };
 
 export const getUser = () => {
   let username = localStorage.getItem("username");
   return username;
 };
-
-// const isAuthenticated = () => {
-//     return Boolean(getUser());
-// }
