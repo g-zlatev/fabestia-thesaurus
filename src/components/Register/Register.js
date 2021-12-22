@@ -13,7 +13,18 @@ function Register({ onRegister }) {
     // let email = formData.get("email");
     let { email, password } = Object.fromEntries(formData);
 
-    authService.register(email, password);
+    authService
+      .register(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        console.log(user.uid, user.email);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        window.alert(errorMessage);
+      });
+
     onRegister(email);
     navigate("/");
   };

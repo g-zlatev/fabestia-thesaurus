@@ -10,12 +10,20 @@ function Login({ onLogin }) {
     e.preventDefault();
 
     let formData = new FormData(e.currentTarget);
-    // let email = formData.get("email");
     let { email, password } = Object.fromEntries(formData);
 
-    authService.login(email, password);
-    onLogin(email);
-    navigate("/");
+    authService
+      .login(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // console.log(user);
+        onLogin({uid: user.uid, email: user.email, accessToken: user.accessToken});
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        window.alert(errorMessage);
+      });
   };
 
   return (
