@@ -13,6 +13,7 @@ import AllArticles from "./components/Articles/AllArticles";
 import MyArticles from "./components/Articles/MyArticles";
 import AddArticle from "./components/Articles/AddArticle";
 import ArticleDetails from "./components/Articles/ArticleDetails";
+import NotFoundErrorPage from "./components/NotFoundErrorPage/NotFoundErrorPage"
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -47,6 +48,7 @@ function App() {
     <div className="page">
       <Header {...userInfo} />
       <Routes>
+        <Route path="*" element={<NotFoundErrorPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path="/logout" element={<Logout onLogout={onLogout} />} />
