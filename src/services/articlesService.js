@@ -9,6 +9,7 @@ import {
   addDoc,
   where,
   updateDoc,
+  deleteDoc,
   orderBy,
   limit,
 } from "firebase/firestore";
@@ -57,7 +58,7 @@ export async function createArticle(
   content,
   dateAdded,
   userId,
-  userEmail,
+  userEmail
 ) {
   const docRef = await addDoc(collection(db, "articles"), {
     title,
@@ -67,7 +68,7 @@ export async function createArticle(
     dateAdded,
     userId,
     userEmail,
-    likes: 0
+    likes: 0,
   });
   console.log("Document written with ID: ", docRef.id);
 }
@@ -76,4 +77,8 @@ export async function editArticle(id, editedArticle) {
   const article = doc(db, "articles", id);
 
   await updateDoc(article, editedArticle);
+}
+
+export async function deleteArticle(id) {
+  await deleteDoc(doc(db, "articles", id));
 }

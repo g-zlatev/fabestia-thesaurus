@@ -1,11 +1,16 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 
 import "./ArticleDetails.css";
-import { getOneById, editArticle } from "../../services/articlesService";
+import {
+  getOneById,
+  editArticle,
+  deleteArticle,
+} from "../../services/articlesService";
 import { AuthContext } from "../../contexts/AuthContext";
 
 const ArticleDetails = () => {
+  const navigate = useNavigate();
   const { userInfo } = useContext(AuthContext);
   const [article, setArticle] = useState({});
   const { articleId } = useParams();
@@ -20,11 +25,16 @@ const ArticleDetails = () => {
   }, [articleId]);
 
   const onLikeClick = () => {
-    setArticle(ar => ({
-      ...ar, likes: article.likes+1
-    }))
+    setArticle((ar) => ({
+      ...ar,
+      likes: article.likes + 1,
+    }));
     console.log(article.likes);
     editArticle(articleId, { likes: article.likes });
+  };
+
+  const onArticleDelete = () => {
+    deleteArticle(articleId).then(() => navigate("/"));
   };
 
   //   console.log(article);
@@ -58,11 +68,13 @@ const ArticleDetails = () => {
                 Edit Article
               </button>
             </Link>
-            <Link to={`/articles/delete/${articleId}`}>
-              <button type="button" className="btn btn-danger">
-                Delete Article
-              </button>
-            </Link>
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={onArticleDelete}
+            >
+              Delete Article
+            </button>
           </>
         ) : (
           <button
