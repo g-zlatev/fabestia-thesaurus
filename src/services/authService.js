@@ -2,21 +2,24 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  setPersistence,
+  browserSessionPersistence,
   signOut,
 } from "firebase/auth";
 
+const auth = getAuth();
+
 export const register = (email, password) => {
-  const auth = getAuth();
   return createUserWithEmailAndPassword(auth, email, password);
 };
 
 export const login = (email, password) => {
-  const auth = getAuth();
+  setPersistence(auth, browserSessionPersistence);
+
   return signInWithEmailAndPassword(auth, email, password);
 };
 
 export const logout = () => {
-  const auth = getAuth();
   return signOut(auth);
 };
 
