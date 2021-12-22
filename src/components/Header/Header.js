@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./Header.css";
 
-function Header(isAuthenticated, username) {
+function Header({ email }) {
   let userNavigation = (
     <nav>
       <ul className="" role="navigation">
@@ -57,7 +57,8 @@ function Header(isAuthenticated, username) {
             <Link to="/">Fabestia</Link>
           </h1>
         </div>
-        {isAuthenticated.isAuthenticated ? userNavigation : guestNavigation}
+        <p className="header-user-info">Currently browsing as: <br></br> {email || "Guest"}</p>
+        {email ? userNavigation : guestNavigation}
       </div>
     </header>
   );
