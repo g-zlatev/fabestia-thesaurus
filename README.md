@@ -6,8 +6,10 @@ Guest users can view and like the articles, while Registered users can add new a
 
 Each user can view their own articles and edit them.
 
+The application is hosted and can be accessed at [https://fabestia-thesaurus.web.app/](https://fabestia-thesaurus.web.app/)
 
 ### Main technologies used:
+
 - JavaStript
 - React
 - Firebase - Firestore
