@@ -53,8 +53,6 @@ export async function createArticle(
   console.log("Document written with ID: ", docRef.id);
 }
 
-
-//TODO: Check if working
 export async function editArticle(id, editedArticle) {
   const article = doc(db, "articles", id);
 
