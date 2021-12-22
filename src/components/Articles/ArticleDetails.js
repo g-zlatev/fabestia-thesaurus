@@ -23,7 +23,7 @@ const ArticleDetails = () => {
     setArticle(ar => ({
       ...ar, likes: article.likes+1
     }))
-    console.log(article);
+    console.log(article.likes);
     editArticle(articleId, { likes: article.likes });
   };
 
