@@ -20,6 +20,7 @@ const AllArticles = () => {
 
   return (
     <div className="all-articles-container">
+      <h1 className="mb-3 col-md-8">All Articles</h1>
       {articles.length > 0 
       ? (
         <div className="row row-cols-1 row-cols-md-2 g-4 ">

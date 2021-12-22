@@ -19,8 +19,6 @@ const EditArticle = () => {
     );
   }, [articleId]);
 
-
-
   const onArticleEdit = (e) => {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
@@ -32,18 +30,20 @@ const EditArticle = () => {
     let dateAdded = new Date();
 
     let art = {
-        title,
-        author,
-        bgImage: imageUrl,
-        text: content,
-        dateAdded
+      title,
+      author,
+      bgImage: imageUrl,
+      text: content,
+      dateAdded,
     };
 
     // console.log(art);
 
-    editArticle(articleId, art).then(
-      navigate("/")
-    );
+    editArticle(articleId, art)
+      .then(() => navigate("/"))
+      .catch((err) => {
+        window.alert(err.message);
+      });
   };
 
   return (

@@ -15,9 +15,11 @@ const AddArticle = () => {
     let content = formData.get("content");
     let dateAdded = new Date();
 
-    createArticle(title, author, imageUrl, content, dateAdded).then(
-      navigate("/")
-    );
+    createArticle(title, author, imageUrl, content, dateAdded)
+      .then(() => navigate("/"))
+      .catch((err) => {
+        window.alert(err.message);
+      });
   };
 
   return (
