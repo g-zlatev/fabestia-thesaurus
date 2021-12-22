@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
 import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 import Logout from "./components/Logout/Logout";
 import AllArticles from "./components/Articles/AllArticles";
 import MyArticles from "./components/Articles/MyArticles";
@@ -39,6 +40,13 @@ function App() {
     });
   };
 
+  const onRegister = (username) => {
+    setUserInfo({
+      isAuthenticated: true,
+      user: username,
+    });
+  };
+
   const onLogout = () => {
     setUserInfo({
       isAuthenticated: false,
@@ -54,6 +62,7 @@ function App() {
           <Route path="*" element={<NotFoundErrorPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login onLogin={onLogin} />} />
+          <Route path="/register" element={<Register onRegister={onRegister} />} />
           <Route path="/logout" element={<Logout onLogout={onLogout} />} />
           <Route path="/articles" element={<AllArticles />} />
           <Route path="/articles/my-articles" element={<MyArticles />} />

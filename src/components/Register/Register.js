@@ -1,20 +1,20 @@
 // import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import "./Register.css";
 import * as authService from "../../services/authService";
 
-function Login({ onLogin }) {
+function Register({ onRegister }) {
   let navigate = useNavigate();
 
-  const onLoginHandler = (e) => {
+  const onRegisterHandler = (e) => {
     e.preventDefault();
 
     let formData = new FormData(e.currentTarget);
     // let email = formData.get("email");
     let { email, password } = Object.fromEntries(formData);
 
-    authService.login(email, password);
-    onLogin(email);
+    authService.register(email, password);
+    onRegister(email);
     navigate("/");
   };
 
@@ -22,8 +22,8 @@ function Login({ onLogin }) {
     <div id="main">
       <div className="auth-wrapper">
         <div className="auth-inner">
-          <form onSubmit={onLoginHandler} method="POST">
-            <h3>Sign In</h3>
+          <form onSubmit={onRegisterHandler} method="POST">
+            <h3>Register</h3>
 
             <div className="form-group">
               <label htmlFor="email">Email address</label>
@@ -41,9 +41,20 @@ function Login({ onLogin }) {
               <input
                 type="password"
                 name="password"
-                autoComplete="current-password"
+                autoComplete="new-password"
                 className="form-control"
                 placeholder="Enter password"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Confirm Password</label>
+              <input
+                type="password"
+                name="confirm-password"
+                autoComplete="new-password"
+                className="form-control"
+                placeholder="Confirm password"
               />
             </div>
 
@@ -73,4 +84,4 @@ function Login({ onLogin }) {
   );
 }
 
-export default Login;
+export default Register;

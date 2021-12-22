@@ -1,9 +1,43 @@
-export const login = (username) => {
-  localStorage.setItem("username", username);
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
+export const register = (email, password) => {
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user.uid, user.email);
+      return user;
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    });
+};
+
+export const login = (email, password) => {
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user.uid, user.email);
+      return user;
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    });
 };
 
 export const logout = () => {
-  localStorage.removeItem('username');
+  localStorage.removeItem("username");
 };
 
 export const getUser = () => {
@@ -11,6 +45,6 @@ export const getUser = () => {
   return username;
 };
 
-const isAuthenticated = () => {
-    return Boolean(getUser());
-}
+// const isAuthenticated = () => {
+//     return Boolean(getUser());
+// }
