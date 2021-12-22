@@ -1,7 +1,7 @@
 import "./ArticleCard.css";
 import { Link } from "react-router-dom";
 
-const ArticleCard = ({ article, userId }) => {
+const ArticleCard = ({ article }) => {
   return (
     <div className="col">
       <div className="card">
@@ -14,13 +14,13 @@ const ArticleCard = ({ article, userId }) => {
               Details
             </button>
           </Link>
-          {userId && (
+          {/* {userId && (
             <Link to={`edit/${article.id}`}>
-              <button type="button" className="btn btn-outline-info ms-3">
+              <button type="button" className="btn btn-outline-warning ms-3">
                 Edit
               </button>
             </Link>
-          )}
+          )} */}
         </div>
       </div>
     </div>

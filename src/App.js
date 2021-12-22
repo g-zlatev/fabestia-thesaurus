@@ -1,10 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
-import * as authService from "./services/authService";
-import AuthContext from "./contexts/AuthContext";
+import { AuthContext } from "./contexts/AuthContext";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
@@ -20,49 +19,31 @@ import EditArticle from "./components/Articles/EditArticle";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
-    isAuthenticated: false,
-    username: "",
+    uid: "",
+    email: "",
+    accessToken: "",
   });
 
-  useEffect(() => {
-    let user = authService.getUser();
-
-    setUserInfo({
-      isAuthenticated: Boolean(user),
-      user,
-    });
-  }, []);
-
-  const onLogin = (username) => {
-    setUserInfo({
-      isAuthenticated: true,
-      user: username,
-    });
+  const login = (authData) => {
+    setUserInfo(authData);
   };
 
-  const onRegister = (username) => {
-    setUserInfo({
-      isAuthenticated: true,
-      user: username,
-    });
-  };
+  const onRegister = () => {};
 
-  const onLogout = () => {
-    setUserInfo({
-      isAuthenticated: false,
-      user: null,
-    });
-  };
+  const onLogout = () => {};
 
   return (
-    <AuthContext.Provider value={''}>
+    <AuthContext.Provider value={{ userInfo, login }}>
       <div className="page">
-        <Header {...userInfo} />
+        <Header />
         <Routes>
           <Route path="*" element={<NotFoundErrorPage />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<Login onLogin={onLogin} />} />
-          <Route path="/register" element={<Register onRegister={onRegister} />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/register"
+            element={<Register onRegister={onRegister} />}
+          />
           <Route path="/logout" element={<Logout onLogout={onLogout} />} />
           <Route path="/articles" element={<AllArticles />} />
           <Route path="/articles/my-articles" element={<MyArticles />} />

@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 import { createArticle } from "../../services/articlesService";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const AddArticle = () => {
+  const { userInfo } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const onArticleCreate = (e) => {
@@ -14,8 +18,10 @@ const AddArticle = () => {
     let imageUrl = formData.get("imageUrl");
     let content = formData.get("content");
     let dateAdded = new Date();
+    let userEmail = userInfo.email;
+    let userId = userInfo.uid;
 
-    createArticle(title, author, imageUrl, content, dateAdded)
+    createArticle(title, author, imageUrl, content, dateAdded, userId, userEmail)
       .then(() => navigate("/"))
       .catch((err) => {
         window.alert(err.message);

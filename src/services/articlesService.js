@@ -7,6 +7,7 @@ import {
   getDoc,
   getDocs,
   addDoc,
+  where,
   updateDoc,
   orderBy,
   limit,
@@ -37,12 +38,26 @@ export async function getOrderedArticles(orderParam, limitParam) {
   return res;
 }
 
+export async function getOwnArticles(userId, orderParam) {
+  const q = query(
+    collection(db, "articles"),
+    where("userId", "==", userId),
+    orderBy(orderParam, "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  let res = [];
+  querySnapshot.forEach((doc) => res.push({ ...doc.data(), id: doc.id }));
+  return res;
+}
+
 export async function createArticle(
   title,
   author,
   imageUrl,
   content,
-  dateAdded
+  dateAdded,
+  userId,
+  userEmail,
 ) {
   const docRef = await addDoc(collection(db, "articles"), {
     title,
@@ -50,6 +65,8 @@ export async function createArticle(
     bgImage: imageUrl,
     text: content,
     dateAdded,
+    userId,
+    userEmail
   });
   console.log("Document written with ID: ", docRef.id);
 }
