@@ -14,13 +14,6 @@ const ArticleCard = ({ article }) => {
               Details
             </button>
           </Link>
-          {/* {userId && (
-            <Link to={`edit/${article.id}`}>
-              <button type="button" className="btn btn-outline-warning ms-3">
-                Edit
-              </button>
-            </Link>
-          )} */}
         </div>
       </div>
     </div>

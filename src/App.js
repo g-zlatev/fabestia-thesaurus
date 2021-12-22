@@ -30,7 +30,9 @@ function App() {
 
   const onRegister = () => {};
 
-  const onLogout = () => {};
+  const onLogout = () => {
+    setUserInfo({ uid: "", email: "", accessToken: "" });
+  };
 
   return (
     <AuthContext.Provider value={{ userInfo, login }}>

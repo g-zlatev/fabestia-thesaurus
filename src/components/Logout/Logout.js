@@ -10,7 +10,7 @@ const Logout = ({ onLogout }) => {
     .catch((error) => {
       window.alert(error);
     });
-  // onLogout();
+  onLogout();
 
   return <Navigate to={"/login"} replace={true} />;
 };

@@ -39,7 +39,7 @@ const EditArticle = () => {
 
     // console.log(art);
 
-    editArticle(articleId, art)
+    editArticle(articleId, {...art})
       .then(() => navigate("/"))
       .catch((err) => {
         window.alert(err.message);

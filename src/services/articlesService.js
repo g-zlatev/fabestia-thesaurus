@@ -66,12 +66,13 @@ export async function createArticle(
     text: content,
     dateAdded,
     userId,
-    userEmail
+    userEmail,
+    likes: 0
   });
   console.log("Document written with ID: ", docRef.id);
 }
 
-export async function editArticle(id, {...editedArticle}) {
+export async function editArticle(id, editedArticle) {
   const article = doc(db, "articles", id);
 
   await updateDoc(article, editedArticle);

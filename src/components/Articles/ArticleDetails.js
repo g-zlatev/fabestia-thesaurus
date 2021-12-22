@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 
 import "./ArticleDetails.css";
-import { getOneById } from "../../services/articlesService";
+import { getOneById, editArticle } from "../../services/articlesService";
 import { AuthContext } from "../../contexts/AuthContext";
 
 const ArticleDetails = () => {
@@ -18,6 +18,14 @@ const ArticleDetails = () => {
       })
     );
   }, [articleId]);
+
+  const onLikeClick = () => {
+    setArticle(ar => ({
+      ...ar, likes: article.likes+1
+    }))
+    console.log(article);
+    editArticle(articleId, { likes: article.likes });
+  };
 
   //   console.log(article);
 
@@ -37,22 +45,35 @@ const ArticleDetails = () => {
           <p className="card-text">
             <small className="text-muted">Last Modified {article.time} h</small>
           </p>
+          <p className="card-text">
+            <small className="text-muted">Likes: {article.likes}</small>
+          </p>
         </div>
       </div>
-      {article.userId == userInfo.uid && (
-        <div className="details-page-button-wrapper">
-          <Link to={`/articles/edit/${articleId}`}>
-            <button type="button" className="btn btn-warning">
-              Edit Article
-            </button>
-          </Link>
-          <Link to={`/articles/delete/${articleId}`}>
-            <button type="button" className="btn btn-danger">
-              Delete Article
-            </button>
-          </Link>
-        </div>
-      )}
+      <div className="details-page-button-wrapper">
+        {article.userId == userInfo.uid ? (
+          <>
+            <Link to={`/articles/edit/${articleId}`}>
+              <button type="button" className="btn btn-warning">
+                Edit Article
+              </button>
+            </Link>
+            <Link to={`/articles/delete/${articleId}`}>
+              <button type="button" className="btn btn-danger">
+                Delete Article
+              </button>
+            </Link>
+          </>
+        ) : (
+          <button
+            type="button"
+            className="btn btn-outline-success ms-3"
+            onClick={onLikeClick}
+          >
+            Like Article
+          </button>
+        )}
+      </div>
     </div>
   );
 };
