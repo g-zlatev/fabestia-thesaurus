@@ -14,6 +14,7 @@ import MyArticles from "./components/Articles/MyArticles";
 import AddArticle from "./components/Articles/AddArticle";
 import ArticleDetails from "./components/Articles/ArticleDetails";
 import NotFoundErrorPage from "./components/NotFoundErrorPage/NotFoundErrorPage"
+import EditArticle from "./components/Articles/EditArticle";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -56,6 +57,7 @@ function App() {
         <Route path="/articles/my-articles" element={<MyArticles />} />
         <Route path="/articles/add" element={<AddArticle />} />
         <Route path="articles/details/:articleId" element={<ArticleDetails />} />
+        <Route path="articles/edit/:articleId" element={<EditArticle />} />
       </Routes>
 
       <Footer />

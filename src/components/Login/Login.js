@@ -11,6 +11,7 @@ function Login({ onLogin }) {
 
     let formData = new FormData(e.currentTarget);
     let email = formData.get("email");
+    // let { email, password } = Object.fromEntries(formData);
 
     authService.login(email);
     onLogin(email);

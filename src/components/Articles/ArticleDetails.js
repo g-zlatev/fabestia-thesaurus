@@ -33,7 +33,7 @@ const ArticleDetails = () => {
           </h5>
           <p className="card-text">{article.text}</p>
           <p className="card-text">
-            <small className="text-muted">Added on {article.time} h</small>
+            <small className="text-muted">Last Modified {article.time} h</small>
           </p>
         </div>
       </div>

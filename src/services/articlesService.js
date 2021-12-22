@@ -55,10 +55,8 @@ export async function createArticle(
 
 
 //TODO: Check if working
-export async function editArticle(id, { editedArticle }) {
+export async function editArticle(id, editedArticle) {
   const article = doc(db, "articles", id);
 
-  await updateDoc(article, {
-    editedArticle,
-  });
+  await updateDoc(article, editedArticle);
 }
