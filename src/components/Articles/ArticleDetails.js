@@ -4,8 +4,8 @@ import { useState, useEffect, useContext } from "react";
 import "./ArticleDetails.css";
 import {
   getOneById,
-  editArticle,
   deleteArticle,
+  incrementParam,
 } from "../../services/articlesService";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -22,15 +22,10 @@ const ArticleDetails = () => {
         time: new Date(x.dateAdded.seconds * 1000).toLocaleString("en-GB"),
       })
     );
-  }, [articleId]);
+  }, [articleId, article]);
 
   const onLikeClick = () => {
-    setArticle((ar) => ({
-      ...ar,
-      likes: article.likes + 1,
-    }));
-    console.log(article.likes);
-    editArticle(articleId, { likes: article.likes });
+    incrementParam(articleId, 1).then(() => {});
   };
 
   const onArticleDelete = () => {
@@ -61,7 +56,7 @@ const ArticleDetails = () => {
         </div>
       </div>
       <div className="details-page-button-wrapper">
-        {article.userId == userInfo.uid ? (
+        {article.userId === userInfo.uid ? (
           <>
             <Link to={`/articles/edit/${articleId}`}>
               <button type="button" className="btn btn-warning">

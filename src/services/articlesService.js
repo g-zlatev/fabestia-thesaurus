@@ -12,6 +12,7 @@ import {
   deleteDoc,
   orderBy,
   limit,
+  increment,
 } from "firebase/firestore";
 
 export async function getAllArticles() {
@@ -77,6 +78,14 @@ export async function editArticle(id, editedArticle) {
   const article = doc(db, "articles", id);
 
   await updateDoc(article, editedArticle);
+}
+
+export async function incrementParam(id, incrementValue) {
+  const article = doc(db, "articles", id);
+
+  await updateDoc(article, {
+    likes: increment(incrementValue),
+  });
 }
 
 export async function deleteArticle(id) {

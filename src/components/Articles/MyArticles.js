@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import {
-  getOrderedArticles,
   getOwnArticles,
 } from "../../services/articlesService";
 
@@ -15,10 +14,9 @@ const MyArticles = () => {
 
   const [articles, setArticles] = useState([]);
 
-  //TODO: Change logic to get only own articles
   useEffect(() => {
     getOwnArticles(userInfo.uid, "dateAdded").then((x) => setArticles(x));
-  }, []);
+  }, [userInfo.uid]);
 
   // console.log(articles);
 
