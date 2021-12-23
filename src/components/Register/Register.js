@@ -11,22 +11,28 @@ function Register({ onRegister }) {
 
     let formData = new FormData(e.currentTarget);
     // let email = formData.get("email");
-    let { email, password } = Object.fromEntries(formData);
+    let { email, password, confirmPassword } = Object.fromEntries(formData);
 
-    authService
-      .register(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        console.log(user.uid, user.email);
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        window.alert(errorMessage);
-      });
-
-    onRegister(email);
-    navigate("/");
+    try {
+      if (password !== confirmPassword) {
+        throw new Error("Passwords dont match!");
+      }
+      authService
+        .register(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+          console.log(user.uid, user.email);
+          onRegister(email);
+          navigate("/");
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          window.alert(errorMessage);
+        });
+    } catch (error) {
+      window.alert(error.message);
+    }
   };
 
   return (
@@ -62,7 +68,7 @@ function Register({ onRegister }) {
               <label htmlFor="password">Confirm Password</label>
               <input
                 type="password"
-                name="confirm-password"
+                name="confirmPassword"
                 autoComplete="new-password"
                 className="form-control"
                 placeholder="Confirm password"
