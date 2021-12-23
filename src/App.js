@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
@@ -19,11 +18,13 @@ import NotFoundErrorPage from "./components/NotFoundErrorPage/NotFoundErrorPage"
 import EditArticle from "./components/Articles/EditArticle";
 
 function App() {
-  const [userInfo, setUserInfo] = useLocalStorage('user', {
+  const initialState = {
     uid: "",
     email: "",
     accessToken: "",
-  });
+  };
+
+  const [userInfo, setUserInfo] = useLocalStorage("user", initialState);
 
   const login = (authData) => {
     setUserInfo(authData);
@@ -32,7 +33,7 @@ function App() {
   const onRegister = () => {};
 
   const onLogout = () => {
-    setUserInfo({ uid: "", email: "", accessToken: "" });
+    setUserInfo(initialState);
   };
 
   return (
