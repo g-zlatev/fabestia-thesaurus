@@ -1,9 +1,12 @@
 // import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
 import * as authService from "../../services/authService";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 
 function Register({ onRegister }) {
+  const { login } = useContext(AuthContext);
   let navigate = useNavigate();
 
   const onRegisterHandler = (e) => {
@@ -24,6 +27,7 @@ function Register({ onRegister }) {
           console.log(user);
           console.log(user.uid, user.email);
           onRegister(email);
+          login(user)
           navigate("/");
         })
         .catch((error) => {
