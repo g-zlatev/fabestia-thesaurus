@@ -4,6 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 import { AuthContext } from "./contexts/AuthContext";
+import useLocalStorage from "./hooks/useLocalStorage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
@@ -18,7 +19,7 @@ import NotFoundErrorPage from "./components/NotFoundErrorPage/NotFoundErrorPage"
 import EditArticle from "./components/Articles/EditArticle";
 
 function App() {
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useLocalStorage('user', {
     uid: "",
     email: "",
     accessToken: "",
